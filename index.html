@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>SecureChat - Anonymous Temporary Chat Rooms</title>
+    <meta name="description" content="Mobile-first anonymous chat with temporary rooms">
+    <meta name="theme-color" content="#1a1a1a">
+    
+    <!-- Prevent screenshot and content protection -->
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob:; connect-src 'self' ws: wss:;">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/public/styles/main.css">
+    <link rel="stylesheet" href="/public/styles/components/mobile-guard.css">
+    <link rel="stylesheet" href="/public/styles/components/home.css">
+    <link rel="stylesheet" href="/public/styles/components/create-room.css">
+    <link rel="stylesheet" href="/public/styles/components/join-room.css">
+    <link rel="stylesheet" href="/public/styles/components/room-created.css">
+    <link rel="stylesheet" href="/public/styles/components/chat-room.css">
+    <link rel="stylesheet" href="/public/styles/components/admin-panel.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💬</text></svg>">
+</head>
+<body>
+    <!-- Privacy overlay for screenshot protection -->
+    <div id="privacy-overlay" class="privacy-overlay hidden">
+        <div class="privacy-content">
+            <div class="privacy-icon">🛡️</div>
+            <h2>Privacy Protected</h2>
+            <p>Screenshot attempt detected. Content temporarily hidden for security.</p>
+        </div>
+    </div>
+
+    <!-- Main application container -->
+    <div id="app" class="app-container">
+        <!-- Content will be dynamically loaded here -->
+    </div>
+
+    <!-- Loading spinner -->
+    <div id="loading" class="loading-spinner hidden">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="/public/js/utils.js"></script>
+    <script src="/public/js/api.js"></script>
+    <script src="/public/js/websocket.js"></script>
+    <script src="/public/js/router.js"></script>
+    <script src="/public/js/components/MobileGuard.js"></script>
+    <script src="/public/js/components/Home.js"></script>
+    <script src="/public/js/components/CreateRoom.js"></script>
+    <script src="/public/js/components/JoinRoom.js"></script>
+    <script src="/public/js/components/RoomCreated.js"></script>
+    <script src="/public/js/components/ChatRoom.js"></script>
+    <script src="/public/js/components/AdminPanel.js"></script>
+    <script src="/public/js/app.js"></script>
+</body>
+</html>

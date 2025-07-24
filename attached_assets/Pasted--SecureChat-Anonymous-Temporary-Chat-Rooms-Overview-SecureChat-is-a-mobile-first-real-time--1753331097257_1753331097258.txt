@@ -1,0 +1,129 @@
+# SecureChat - Anonymous Temporary Chat Rooms
+
+## Overview
+
+SecureChat is a mobile-first, real-time chat application designed for temporary, anonymous communications. The application creates disposable chat rooms with 8-digit codes that expire after 15 minutes, focusing on privacy and security with features like screenshot protection and ephemeral messaging.
+
+## System Architecture
+
+### Frontend Architecture
+- **Framework**: React 18 with TypeScript
+- **Routing**: Wouter for lightweight client-side routing
+- **State Management**: TanStack React Query for server state management
+- **UI Components**: Radix UI with shadcn/ui component library
+- **Styling**: Tailwind CSS with custom dark theme and CSS variables
+- **Build Tool**: Vite for fast development and optimized builds
+
+### Backend Architecture
+- **Runtime**: Node.js with Express.js server
+- **WebSocket**: Native WebSocket server for real-time messaging
+- **Database**: PostgreSQL with Drizzle ORM
+- **Database Provider**: Neon Database (serverless PostgreSQL)
+- **Session Management**: In-memory storage with fallback to database persistence
+
+## Key Components
+
+### Chat Room Management
+- **Room Creation**: Generates 8-digit numeric codes for easy sharing
+- **Expiration System**: Automatic cleanup after configurable timeouts (default 15 minutes)
+- **User Management**: Anonymous user identification with session-based tracking
+- **Admin Controls**: Room creators have administrative privileges including member management
+- **Member Management**: Admins can kick non-admin members from rooms
+- **Admin Identification**: Crown icons clearly identify room administrators
+- **QR Code Sharing**: Visual room code sharing for mobile accessibility
+
+### Real-Time Messaging
+- **WebSocket Integration**: Bidirectional communication for instant messaging
+- **Message Types**: Text messages with user attribution and encryption
+- **Message Encryption**: Client-side AES-GCM encryption using room-based keys
+- **Typing Indicators**: Live typing status updates
+- **Message History**: Persistent storage during room lifetime
+- **User Presence**: Real-time member count and status tracking
+
+### Privacy and Security Features
+- **Screenshot Protection**: Detects and blocks screenshot attempts on mobile
+- **Content Protection**: Disables text selection, context menus, and copy operations
+- **Privacy Overlay**: Visual protection when suspicious activity is detected
+- **Ephemeral Data**: Automatic cleanup of expired rooms and messages
+- **Anonymous Identity**: No persistent user accounts or data collection
+
+### Mobile-First Design
+- **Mobile-Only Access**: Application restricted to mobile devices only with MobileOnlyGuard component
+- **Device Detection**: Multiple detection methods including user agent, touch capability, and screen size
+- **Responsive Layout**: Optimized for mobile viewports with touch interactions
+- **Touch-Friendly UI**: Gesture-based navigation and mobile-specific UX patterns
+- **Mobile Optimization**: Viewport configuration and touch event handling
+- **Cross-Platform**: Progressive web app capabilities for mobile browsers
+
+## Data Flow
+
+### Room Creation Flow
+1. User initiates room creation with username and duration settings
+2. Server generates unique 8-digit room code and expiration timestamp
+3. User record created or retrieved based on session ID
+4. Room stored in database with creator as admin
+5. User redirected to room-created page with QR code and sharing options
+
+### Chat Messaging Flow
+1. User joins room via WebSocket connection with room code and session ID
+2. Server validates room existence and user credentials
+3. User added to room members and WebSocket connection established
+4. Real-time message broadcasting to all connected room members
+5. Message persistence in database with user attribution
+
+### Privacy Protection Flow
+1. Client-side detection of screenshot attempts and suspicious activity
+2. Privacy overlay activation with content masking
+3. Automatic timeout and restoration of normal view
+4. Prevention of text selection and context menu access
+
+## External Dependencies
+
+### Core Libraries
+- **React Ecosystem**: React 18, React Query, React Hook Form
+- **UI Framework**: Radix UI primitives with shadcn/ui components
+- **Styling**: Tailwind CSS with class-variance-authority for variants
+- **Database**: Drizzle ORM with PostgreSQL dialect
+- **WebSocket**: Native WebSocket with custom connection management
+- **Utilities**: date-fns for date formatting, nanoid for ID generation
+
+### Development Tools
+- **Build System**: Vite with TypeScript support
+- **Database Migration**: Drizzle Kit for schema management
+- **Development Server**: Express with middleware for API routes
+- **Code Quality**: TypeScript for type safety and ESLint configuration
+
+## Deployment Strategy
+
+### Build Process
+- **Frontend**: Vite builds React application to `dist/public`
+- **Backend**: esbuild bundles server code to `dist/index.js`
+- **Database**: Drizzle migrations applied via `db:push` command
+- **Assets**: Static assets served from build directory
+
+### Environment Configuration
+- **Database**: PostgreSQL connection via `DATABASE_URL` environment variable
+- **Sessions**: In-memory storage with PostgreSQL backup
+- **Development**: Hot reload with Vite dev server
+- **Production**: Optimized builds with static asset serving
+
+### Scalability Considerations
+- **WebSocket Management**: Connection pooling and cleanup for expired rooms
+- **Database Cleanup**: Automated cleanup of expired rooms and messages
+- **Memory Management**: In-memory storage with fallback to database persistence
+- **Mobile Optimization**: Lightweight bundle size and efficient rendering
+
+## Changelog
+
+Changelog:
+- July 05, 2025. Initial setup
+- July 05, 2025. Added mobile-only restriction with MobileOnlyGuard component
+- July 05, 2025. Redesigned home page with step-by-step flow (Create/Join → Username → Duration/Room Code)
+- July 05, 2025. Simplified admin settings panel by removing duplicate duration settings
+- July 06, 2025. Added admin member management - admins can kick non-admin members
+- July 06, 2025. Implemented message encryption using AES-GCM with room-based keys
+- July 06, 2025. Enhanced WebSocket handling for kick events and member management
+
+## User Preferences
+
+Preferred communication style: Simple, everyday language.

@@ -1,0 +1,147 @@
+/* Mobile Guard Component Styles */
+
+.mobile-guard {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+.mobile-guard-content {
+    text-align: center;
+    max-width: 500px;
+    padding: 40px 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.mobile-guard-icon {
+    font-size: 80px;
+    margin-bottom: 24px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.mobile-guard-content h1 {
+    font-size: 28px;
+    margin-bottom: 16px;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.mobile-guard-content > p {
+    font-size: 16px;
+    color: #cccccc;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+.features-list {
+    margin-bottom: 32px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    text-align: left;
+}
+
+.feature-icon {
+    font-size: 24px;
+    width: 40px;
+    text-align: center;
+}
+
+.feature span:last-child {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.instructions {
+    margin-bottom: 32px;
+    text-align: left;
+}
+
+.instructions h3 {
+    color: #00ff88;
+    margin-bottom: 16px;
+    font-size: 18px;
+}
+
+.instructions ol {
+    color: #cccccc;
+    padding-left: 20px;
+}
+
+.instructions li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.qr-section {
+    margin-bottom: 32px;
+}
+
+.qr-section p {
+    color: #cccccc;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.qr-code {
+    display: inline-block;
+    padding: 16px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.qr-code img {
+    display: block;
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+}
+
+.retry-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.retry-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+    .mobile-guard-content {
+        padding: 30px 20px;
+        margin: 0 10px;
+    }
+    
+    .mobile-guard-icon {
+        font-size: 60px;
+    }
+    
+    .mobile-guard-content h1 {
+        font-size: 24px;
+    }
+    
+    .qr-code img {
+        width: 150px;
+        height: 150px;
+    }
+}

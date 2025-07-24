@@ -1,0 +1,236 @@
+/* Join Room Component Styles */
+
+.join-room {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+.join-room-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+    padding-top: 20px;
+}
+
+.join-room-header h1 {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.join-room-content {
+    flex: 1;
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.join-form-container {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 32px;
+    backdrop-filter: blur(10px);
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.join-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 4px 8px rgba(0, 255, 136, 0.3));
+}
+
+.join-description {
+    color: #cccccc;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.join-form {
+    text-align: left;
+}
+
+.join-form .form-group {
+    margin-bottom: 24px;
+}
+
+.join-form .form-group label {
+    display: block;
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.join-form .form-group input {
+    width: 100%;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 16px;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.join-form .form-group input:focus {
+    outline: none;
+    border-color: #00ff88;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.1);
+}
+
+.join-form .form-group input[name="roomCode"] {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+}
+
+.join-form .form-group input[name="username"] {
+    text-align: left;
+}
+
+.join-form .form-group small {
+    display: block;
+    color: #cccccc;
+    font-size: 13px;
+    margin-top: 6px;
+    line-height: 1.4;
+}
+
+.join-form .btn {
+    width: 100%;
+    margin-top: 16px;
+    font-size: 16px;
+    padding: 16px 24px;
+    min-height: 52px;
+}
+
+.join-tips {
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.join-tips h3 {
+    color: #00ff88;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.join-tips ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.join-tips li {
+    color: #cccccc;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.join-tips li::before {
+    content: '💡';
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.join-tips li:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .join-room {
+        padding: 15px;
+    }
+    
+    .join-room-header {
+        margin-bottom: 24px;
+        padding-top: 10px;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    
+    .join-room-header .back-btn {
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+    
+    .join-room-header h1 {
+        font-size: 24px;
+        width: 100%;
+    }
+    
+    .join-form-container {
+        padding: 24px;
+        margin: 0 -5px 24px;
+    }
+    
+    .join-icon {
+        font-size: 48px;
+        margin-bottom: 16px;
+    }
+    
+    .join-description {
+        font-size: 15px;
+        margin-bottom: 24px;
+    }
+    
+    .join-form .form-group {
+        margin-bottom: 20px;
+    }
+    
+    .join-form .form-group input[name="roomCode"] {
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+    
+    .join-form .btn {
+        min-height: 48px;
+        padding: 14px 20px;
+    }
+    
+    .join-tips {
+        padding: 20px;
+        margin: 0 -5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .join-room-header {
+        align-items: flex-start;
+    }
+    
+    .join-form-container {
+        padding: 20px;
+    }
+    
+    .join-tips {
+        padding: 16px;
+    }
+    
+    .join-tips h3 {
+        font-size: 16px;
+    }
+    
+    .join-tips li {
+        font-size: 13px;
+    }
+}

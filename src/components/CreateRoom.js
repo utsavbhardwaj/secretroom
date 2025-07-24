@@ -1,0 +1,1 @@
+const roomName = inputRef.current ? inputRef.current.value.trim() : '';
